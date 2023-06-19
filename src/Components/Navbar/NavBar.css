@@ -1,0 +1,6 @@
+.nav-biri{
+    font-family: 'Bungee', cursive;
+}
+.nav-biri:active{
+    text-decoration: underline;
+}
