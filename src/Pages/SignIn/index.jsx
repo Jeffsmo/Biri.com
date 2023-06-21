@@ -1,14 +1,11 @@
-function SignIn() {
+import {Layout} from '../../Components/Layout'
 
-    return (
-      <>
-        <div className='bg-red-100'>
-              Sign In
-        </div>
-  
-      </>
-    )
-  }
-  
-  export {SignIn} 
-  
+function SignIn() {
+  return (
+    <Layout>
+      SignIn
+    </Layout>
+  )
+}
+
+export {SignIn}

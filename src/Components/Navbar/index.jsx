@@ -1,13 +1,18 @@
 import { NavLink } from "react-router-dom";
-import './NavBar.css'
+import { useContext } from "react";
+import { shopingCartContext } from "../../Context";
 
 
 function NavBar (){
+    const context = useContext(shopingCartContext)
     const activeStyle = 'underline underline-offset-4'
     return(
-        <nav className="flex justify-between item-center fixed z-10 w-full py-4 px-8 text-sm font-light">
+        <nav className="flex justify-between item-center fixed z-10 w-full py-4 px-8 text-sm font-light bg-neutral-900 text-white top-0">
             <ul className="flex items-center gap-4">
-                <li className="nav-biri font-bold text-lg">
+                <li className={`nav-biri font-bold text-lg ${({isActive})=> isActive?activeStyle:undefined}`}
+                style={{
+                    fontFamily: "'Bungee', cursive",
+                }}>
                     <NavLink 
                     to='/'>
                         Biri.com
@@ -78,7 +83,7 @@ function NavBar (){
                 </li>
             </ul>
             <ul className="flex items-center gap-4">
-                <li>
+                <li className="text-black/60">
                         Alguien@example.com
                 </li>
                 <li>
@@ -110,7 +115,7 @@ function NavBar (){
                 </li>
                 <li>
                     <NavLink to='/shirts'>
-                        🛒 0
+                        🛒 {context.count}
                     </NavLink>
                 </li>
             </ul>
