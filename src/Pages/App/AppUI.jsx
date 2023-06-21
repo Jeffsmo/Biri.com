@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import { Modal } from '../../Components/Modal';
 import { ModalContext } from '../../Context';
 import { NavBar } from '../../Components/Navbar';
+import { ProductDetail } from '../../Components/ProducDetail';
 
 
 const AppRoutes = ()=> {
@@ -58,6 +59,7 @@ const AppRoutes = ()=> {
         <NavBar/>
         {openModal && (
             <Modal>
+                <ProductDetail/>
             </Modal>
         )}     
     </>

@@ -1,11 +1,21 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { shopingCartContext } from "../../Context";
+import { SideMenu } from "../SideMenu";
 
 
 function NavBar (){
-    const context = useContext(shopingCartContext)
+    const context = useContext(shopingCartContext);
     const activeStyle = 'underline underline-offset-4'
+    
+    const [clicked, setClicked] = useState(false);
+  
+
+    const handleClick = () => {
+      setClicked(!clicked);
+      context.setOpenSideMenu(!context.openSideMenu)
+  
+    };
     return(
         <nav className="flex justify-between item-center fixed z-10 w-full py-4 px-8 text-sm font-light bg-neutral-900 text-white top-0">
             <ul className="flex items-center gap-4">
@@ -83,7 +93,7 @@ function NavBar (){
                 </li>
             </ul>
             <ul className="flex items-center gap-4">
-                <li className="text-black/60">
+                <li className="text-white/60">
                         Alguien@example.com
                 </li>
                 <li>
@@ -114,9 +124,13 @@ function NavBar (){
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/shirts'>
+                    <NavLink onClick={handleClick}>
                         🛒 {context.count}
+
                     </NavLink>
+                        {context.openSideMenu && (
+                                <SideMenu/>
+                            )}
                 </li>
             </ul>
         </nav>

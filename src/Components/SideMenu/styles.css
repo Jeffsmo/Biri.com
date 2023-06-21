@@ -1,0 +1,11 @@
+.side-menu {
+    width: 360px;
+    height: calc(100vh - 60px);
+    z-index: 1;
+  }
+
+.side-container{
+    width: 100vw ;
+    height: calc(100vh - 60px)
+}
+

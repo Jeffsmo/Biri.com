@@ -27,12 +27,15 @@ function ApiContextProvider({children}){
 const ShopingCartProvider = ({children}) =>{
     
     const [count, setCount] = useState(0);
+    const [openSideMenu, setOpenSideMenu]=useState(false);
     
     return(
         <shopingCartContext.Provider
         value={{
             count,
             setCount,
+            openSideMenu,
+            setOpenSideMenu,
         }}>
             {children}
         </shopingCartContext.Provider>
