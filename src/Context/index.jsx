@@ -9,9 +9,9 @@ function ApiContextProvider({children}){
     const [products, setProducts] = useState(null);
 
     useEffect(()=>{
-      fetch('https://api.escuelajs.co/api/v1/products')
+      fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
-        .then(data => setProducts(data))
+        .then(json => setProducts(json))
     }, [])
     return(
         <ApiContext.Provider

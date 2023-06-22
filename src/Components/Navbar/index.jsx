@@ -38,59 +38,42 @@ function NavBar (){
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/trousers'
+                    <NavLink to='/mens-clothing'
                             className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }
                     >
-                        Trousers
+                        Men{"'"}s Clothing
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/shoes'
+                    <NavLink to='/women-clothing'
                             className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                             }
                     >
-                        Shoes
+                        Women{"'"}s Clothing
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/shirts'
+                    <NavLink to='/electronics'
                             className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }
                     >
-                        Shirts
+                        Electronics
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/tshirts'
+                    <NavLink to='/Jewerely'
                             className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }
                     >
-                        T-Shirts
+                        Jewerely
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to='/caps'
-                            className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }
-                    >
-                        Caps
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to='/others'
-                            className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }
-                    >
-                        Others
-                    </NavLink>
-                </li>
+
             </ul>
             <ul className="flex items-center gap-4">
                 <li className="text-white/60">
