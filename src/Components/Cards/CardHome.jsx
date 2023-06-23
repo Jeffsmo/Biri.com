@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { ApiContext } from "../../Context";
 import './styles.css';
 import logo from "../../Assets/logo.jpeg";
+import { Slideshow } from "../SlideShow";
 
 
 function HomeCard (){
@@ -46,9 +47,7 @@ function HomeCard (){
                             <div className="biri-logo w-full">
                                 <img src={logo} alt="" />
                             </div>
-                            {/*grid gap-8 grid-cols-4 w-full max-w-screen-lg max-h-screen*/}
-                            {/* <div className="new-items grid gap-8 grid-rows-2 w-full max-w-screen-lg max-h-screen"> */}
-                                <div className="slider flex justify-items-center max-w-screen-lg align-center  text-lg ">
+                                {/* <div className="slider flex justify-items-center max-w-screen-lg align-center  text-lg ">
                                     <div className="slide-track flex gap-8 justify-items-center align-center py-4 px-8 text-lg overflow-x-auto overflow-y-hidden max-w-screen-sm
                                      scrollbar-none"> 
                                         {
@@ -60,8 +59,8 @@ function HomeCard (){
                                             })
                                         }
                                     </div>
-                                </div>
-                            {/* </div> */}
+                                </div> */}
+                                <Slideshow/>
                         </div>
                 </div>
 

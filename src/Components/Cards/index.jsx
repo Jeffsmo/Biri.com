@@ -17,7 +17,7 @@ function Card(data){
     };
  
     return(
-        <div className=" relative h-full">
+        <div className="">
             <div className=" bg-white cursor-pointer w-56 h-80">
                 <figure className="relative mb-4 w-full h-4/5">
                     <span className="m-2 px-3 py-0.5 absolute bottom-0 left-0 bg-white/60 rounded-lg text-black text-xs "
