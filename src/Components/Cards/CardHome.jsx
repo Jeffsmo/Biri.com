@@ -4,6 +4,7 @@ import { ApiContext } from "../../Context";
 import './styles.css';
 import logo from "../../Assets/logo.jpeg";
 import { Slideshow } from "../SlideShow";
+import { LongSlider } from "../SlideShow/LongSlider";
 
 
 function HomeCard (){
@@ -22,14 +23,16 @@ function HomeCard (){
                 <div id="Fatured-products" className="flex gap-8 mt-10 mb-5 w-full 
                     max-w-screen-lg overflow-x-auto py-8 overflow-y-hidden scrollbar-thin scrollbar-thumb-stone-500
                      scrollbar-track-zinc-200">
-                {
-                        context.products?.filter((product)=> product.rating.rate >=4.0).map((product) =>{
-                        return (<Card 
-                            key= {product.id}
-                            data= {product}
-                        /> )
-                        })
-                    }
+                    <LongSlider>
+                        { context.products?.filter((product)=> product.rating.rate >=4.0).map((product) =>{
+                            return (<Card 
+                                key= {product.id}
+                                data= {product}
+                            /> )
+                            })
+                        }
+                    </LongSlider>
+
                 </div>              
 
             <div id="new-collections" className="mb-5 pb-10">
@@ -47,20 +50,14 @@ function HomeCard (){
                             <div className="biri-logo w-full">
                                 <img src={logo} alt="" />
                             </div>
-                                {/* <div className="slider flex justify-items-center max-w-screen-lg align-center  text-lg ">
-                                    <div className="slide-track flex gap-8 justify-items-center align-center py-4 px-8 text-lg overflow-x-auto overflow-y-hidden max-w-screen-sm
-                                     scrollbar-none"> 
-                                        {
-                                            context.products?.map((product) =>{
-                                            return (<Card className="slide"
-                                                key= {product.id}
-                                                data= {product}
-                                            /> )
-                                            })
-                                        }
-                                    </div>
-                                </div> */}
-                                <Slideshow/>
+                                <Slideshow>
+                                    {  context.products?.map((product) =>{
+                                        return (<Card className="slide"
+                                            key= {product.id}
+                                            data= {product}
+                                        /> )
+                                        })    }                                
+                                </Slideshow>
                         </div>
                 </div>
 
@@ -75,14 +72,15 @@ function HomeCard (){
                     className="flex gap-8 mt-10 w-full 
                     max-w-screen-lg overflow-x-auto py-8 overflow-y-hidden scrollbar-thin  scrollbar-thumb-stone-500
                      scrollbar-track-zinc-200">
-                    {
-                            context.products?.filter((product)=> product.rating.count>=200).map((product) =>{
+                    <LongSlider>
+                        { context.products?.filter((product)=> product.rating.count>=200).map((product) =>{
                             return (<Card 
                                 key= {product.id}
                                 data= {product}
                             /> )
                             })
                         }
+                    </LongSlider>
                     </div>        
             </div>
         </div>

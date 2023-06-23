@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 
 
 
-function Slideshow ({children}){
+function LongSlider ({children}){
 
     const slideshow = useRef(null) //para acceder a referencias
     const siguiente = ()=>{
@@ -55,18 +55,13 @@ function Slideshow ({children}){
           }
     }
 
-    useEffect(()=>{
-        setInterval(()=>{
-            siguiente()
-        }, 15000);
-        
-    }, [])
 
     return(
-        <div className=" tra relative ">
+        <div className=" w-full 
+        max-w-screen-lg relative ">
 
                 <div  className="slider flex justify-items-center max-w-screen-lg align-center  text-lg ">
-                    <div ref={slideshow} className="  slide-track flex gap-8 justify-items-center align-center py-4 px-8 text-lg overflow-x-auto overflow-y-hidden max-w-screen-sm
+                    <div ref={slideshow} className="  slide-track flex gap-8 justify-items-center align-center py-4 px-8 text-lg overflow-x-auto overflow-y-hidden max-w-screen-lg
                         scrollbar-none"
                         style={{
                             transition:".3s ease all",
@@ -112,4 +107,4 @@ function Slideshow ({children}){
     )
 }
 
-export{Slideshow}
+export{LongSlider}
